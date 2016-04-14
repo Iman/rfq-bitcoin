@@ -1,6 +1,5 @@
 package order;
 
-
 public enum Currency {
     USD("USD");
 

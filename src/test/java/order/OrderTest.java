@@ -3,7 +3,7 @@ package order;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 
 public class OrderTest {
@@ -12,7 +12,7 @@ public class OrderTest {
 
     @Before
     public void setUp() throws Exception {
-        this.order = new Order(Direction.BUY, 10, Currency.USD, 100);
+        this.order = new Order(Direction.BUY, 10, "USD", 100);
     }
 
     @Test
@@ -22,7 +22,7 @@ public class OrderTest {
 
     @Test
     public void testIsBuyAsFalse() throws Exception {
-        Order sellOrder = new Order(Direction.SELL, 5, Currency.USD, 15);
+        Order sellOrder = new Order(Direction.SELL, 5, "USD", 15);
         assertEquals(sellOrder.isBuy(), false);
     }
 
@@ -34,11 +34,11 @@ public class OrderTest {
 
     @Test
     public void testGetCurrency() throws Exception {
-        assertEquals(order.getCurrency(), Currency.USD);
+        assertEquals(order.getCurrency(), "USD");
     }
 
     @Test
     public void testGetAmountOfUnit() throws Exception {
-        assertEquals(order.getAmountOfUnit(), 100);
+        assertEquals(order.getAmount(), 100);
     }
 }

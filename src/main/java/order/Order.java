@@ -3,14 +3,14 @@ package order;
 public class Order {
     private final Direction direction;
     private final double price;
-    private final Currency currency;
-    private final int qty;
+    private final String currency;
+    private final int amount;
 
-    public Order(Direction direction, double price, Currency currency, int qty) {
+    public Order(Direction direction, double price, String currency, int amount) {
         this.direction = direction;
         this.price = price;
         this.currency = currency;
-        this.qty = qty;
+        this.amount = amount;
     }
 
     public Boolean isBuy() {
@@ -26,12 +26,12 @@ public class Order {
         return price;
     }
 
-    public Currency getCurrency() {
+    public String getCurrency() {
         return currency;
     }
 
-    public int getAmountOfUnit() {
-        return qty;
+    public int getAmount() {
+        return amount;
     }
 }
 
