@@ -35,7 +35,7 @@ public class RfqServiceImpl implements RfqService {
         if (!bid.isPresent() || !ask.isPresent()) {
             return Optional.empty();
         }
-        
+
         Quote quote = new Quote(
                 bid.get().getPrice() - IConstants.PRICE_DIFFERENCE,
                 ask.get().getPrice() + IConstants.PRICE_DIFFERENCE);
