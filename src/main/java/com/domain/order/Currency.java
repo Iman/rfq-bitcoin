@@ -1,4 +1,4 @@
-package order;
+package com.domain.order;
 
 public enum Currency {
     USD("USD");

@@ -1,4 +1,4 @@
-package order;
+package com.domain.order;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +12,7 @@ public class OrderTest {
 
     @Before
     public void setUp() throws Exception {
-        this.order = new Order(Direction.BUY, 10, "USD", 100);
+        this.order = new Order(Direction.BUY, 10, Currency.USD.toString(), 100);
     }
 
     @Test
@@ -22,10 +22,9 @@ public class OrderTest {
 
     @Test
     public void testIsBuyAsFalse() throws Exception {
-        Order sellOrder = new Order(Direction.SELL, 5, "USD", 15);
+        Order sellOrder = new Order(Direction.SELL, 5, Currency.USD.toString(), 15);
         assertEquals(sellOrder.isBuy(), false);
     }
-
 
     @Test
     public void testGetPrice() throws Exception {
@@ -34,7 +33,7 @@ public class OrderTest {
 
     @Test
     public void testGetCurrency() throws Exception {
-        assertEquals(order.getCurrency(), "USD");
+        assertEquals(order.getCurrency(), Currency.USD.toString());
     }
 
     @Test

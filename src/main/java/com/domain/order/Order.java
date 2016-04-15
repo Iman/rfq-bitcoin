@@ -1,4 +1,4 @@
-package order;
+package com.domain.order;
 
 public class Order {
     private final Direction direction;
